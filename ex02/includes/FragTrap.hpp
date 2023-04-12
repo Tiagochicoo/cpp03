@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:49 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 16:14:06 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:26:29 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 # include <iostream>
 # include <string>
+# include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
 	private:
 
 	public:
 
-		FragTrap();
+		FragTrap(std::string name);
 		FragTrap( FragTrap const & src );
 		~FragTrap();
 
-		FragTrap &		operator=( FragTrap const & rhs );
+		FragTrap &		operator=( FragTrap const & value );
 
 
 };

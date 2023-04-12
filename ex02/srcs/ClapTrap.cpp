@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 16:03:38 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:47:21 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\e[0;36mClapTrap\e[0m destructor called " << (this->_name != "" ? "for " + this->_name : "from inherited Class") << std::endl;
+	std::cout << "\e[0;36mClapTrap\e[0m destructor called for " << this->_name << std::endl;
 }
 
 /*
