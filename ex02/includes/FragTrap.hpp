@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:49 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 17:26:29 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 22:13:35 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 
 		FragTrap &		operator=( FragTrap const & value );
-
-
+		
+		void	attack(const std::string& target);
+		void	highFivesGuys(void);
 };
 
 std::ostream &			operator<<( std::ostream & o, FragTrap const & i );

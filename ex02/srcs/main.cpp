@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:23:17 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 18:43:48 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 22:16:41 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 
 	mia.attack("Bob");
 	mia.takeDamage(5);
+	mia.highFivesGuys();
 
 	bob.beRepaired(10);
 	joe.beRepaired(42);
