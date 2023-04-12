@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:59:54 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 13:02:02 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:18:49 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+
+	std::cout << "\e[0;36mScavTrap\e[0m constructor called for " << name << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap & src )
+ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
 {
+	(void)src;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -38,17 +44,19 @@ ScavTrap::~ScavTrap()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
+ScavTrap &				ScavTrap::operator=( ScavTrap const & value )
 {
-	//if ( this != &rhs )
+	(void)value;
+	//if ( this != &value )
 	//{
-		//this->_value = rhs.getValue();
+		//this->_value = value.getValue();
 	//}
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
 {
+	(void)i;
 	//o << "Value = " << i.getValue();
 	return o;
 }
@@ -58,6 +66,20 @@ std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->_energyPoints && this->_hitPoints && this->_attackDamage)
+		std::cout << "\e[0;35mScavTrap \e[0m" << this->_name << "\e[0;33m attacks \e[0m" << target << ", causing \e[0;33m" << this->_attackDamage << "\e[0m points of damage!\n";
+	else if (!this->_attackDamage)
+		std::cout << "\e[0;35mScavTrap \e[0m" << this->_name << "\e[0;31m doesn't have\e[0m enough \e[0;31mattack damage\e[0m to hurt anyone!\n";
+	else
+		std::cout << "\e[0;35mScavTrap \e[0m" << this->_name << "\e[0;35m has no hit points or energy points left!\e[0m\n";
+}
+
+void	ScavTrap::guardGate(void)
+{
+	std::cout << "\e[0;35mScavTrap \e[0m" << this->_name << " is now in \e[0;35mGate keeper mode\e[0m...\n";
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
