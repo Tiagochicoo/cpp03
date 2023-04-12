@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 14:16:21 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:03:38 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\e[0;36mClapTrap\e[0m destructor called for " << this->_name << std::endl;
+	std::cout << "\e[0;36mClapTrap\e[0m destructor called " << (this->_name != "" ? "for " + this->_name : "from inherited Class") << std::endl;
 }
 
 /*
@@ -79,7 +79,10 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " has taken \e[0;31m" << amount << "\e[0m points of \e[0;31mdamage\e[0m!\n";
+	if (amount)
+		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " has taken \e[0;31m" << amount << "\e[0m points of \e[0;31mdamage\e[0m!\n";
+	else
+		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " took no \e[0;31mdamage\e[0m!\n";
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
