@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:27:09 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 17:19:50 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:55:00 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,13 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap() : _name("noNameBoy"), ScavTrap(_name), FragTrap(_name)
-{
-	this->_name = this->_name + "_clap_name";
-	std::cout << this->_name;
-}
-
-DiamondTrap::DiamondTrap(std::string name) : _name("noNameBoy"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
 	this->_name = name + "_clap_name";
-	std::cout << this->_name;
+	std::cout << this->_name << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap & value )
+DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(), ScavTrap(value), FragTrap(value)
 {
 	(void)value;
 }
@@ -58,11 +52,9 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & value )
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 {
-	(void)i;
-	//o << "Value = " << i.getValue();
+	o << i;
 	return o;
 }
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -70,7 +62,7 @@ std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << "In computing, whoami is a command found on most Unix-like operating systems\n";
+	std::cout << "Am I " << this->_name << " , or " << _name << " ?\n";
 }
 
 /*
