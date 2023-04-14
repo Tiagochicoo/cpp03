@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:26 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 12:56:37 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:17:58 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ClapTrap
 
 	public:
 
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap( ClapTrap const & value );
 		~ClapTrap();

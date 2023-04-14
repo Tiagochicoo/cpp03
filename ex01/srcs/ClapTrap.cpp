@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 16:23:57 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:27:52 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+ClapTrap::ClapTrap()
+{
+	this->_name = "NoNameBoy";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+
+	std::cout << "\e[0;36mClapTrap\e[0m Default constructor called for " << _name << std::endl;
+}
+
 
 ClapTrap::ClapTrap(std::string name)
 {

@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:45 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 22:19:50 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:27:32 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+FragTrap::FragTrap() : ClapTrap()
+{
+	this->_name = "NoNameBoy";
+	std::cout << "\e[0;32mFragTrap\e[0m Default constructor called for " << _name << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {

@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:49 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 16:44:26 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:22:55 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class FragTrap : virtual public ClapTrap
 
 	public:
 
+		FragTrap();
 		FragTrap(std::string name);
 		FragTrap( FragTrap const & src );
 		~FragTrap();

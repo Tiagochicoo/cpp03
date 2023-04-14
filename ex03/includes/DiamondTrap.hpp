@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:27:03 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 17:45:15 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:22:50 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		std::string _name;
 
 	public:
+
+		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(DiamondTrap const &src);
 		~DiamondTrap();
 
 		DiamondTrap &		operator=( DiamondTrap const & value );
 
-		void whoAmI();
+		void	attack(const std::string& target);
+		void	whoAmI();
 };
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i );

@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:27:09 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 17:55:00 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:27:15 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,28 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
-	this->_name = name + "_clap_name";
-	std::cout << this->_name << std::endl;
+	_name = "NoNameBoy";
+	_hitPoints = FragTrap::_hitPoints;
+	_energyPoints = ScavTrap::_energyPoints;
+	_attackDamage = FragTrap::_attackDamage;
+	std::cout << "\e[0;33mDiamondTrap\e[0m Default constructor called for " << _name << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(), ScavTrap(value), FragTrap(value)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
+{
+	_name = name;
+	_hitPoints = FragTrap::_hitPoints;
+	_energyPoints = ScavTrap::_energyPoints;
+	_attackDamage = FragTrap::_attackDamage;
+	std::cout << "\e[0;33mDiamondTrap\e[0m constructor called for " << _name << std::endl;
+}
+
+DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(value), ScavTrap(value), FragTrap(value)
 {
 	(void)value;
+	std::cout << "\e[0;33mDiamondTrap\e[0m copy constructor called for " << this->_name << std::endl;
 }
 
 /*
@@ -33,6 +46,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(), ScavTrap(val
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << "\e[0;33mDiamondTrap\e[0m destructor called for " << this->_name << std::endl;
 }
 
 
@@ -62,7 +76,12 @@ std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << "Am I " << this->_name << " , or " << _name << " ?\n";
+	std::cout << "\e[0;33mDiamondTrap\e[0m Am I " << this->_name << " , or " << ClapTrap::_name << " ?\n";
+}
+
+void DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
 }
 
 /*

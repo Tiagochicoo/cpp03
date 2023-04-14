@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:59:54 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 16:08:01 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:27:08 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	this->_name = "NoNameBoy";
+	std::cout << "\e[0;35mScavTrap\e[0m Default constructor called for " << _name << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
