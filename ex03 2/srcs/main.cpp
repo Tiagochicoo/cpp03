@@ -6,20 +6,33 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:23:17 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 09:38:20 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/12 22:16:41 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
+#include "../includes/ScavTrap.hpp"
+#include "../includes/FragTrap.hpp"
 
 int main(void)
 {
 	ClapTrap bob("Bob");
-	ClapTrap joe;
+	ScavTrap joe("Joe");
+	FragTrap mia("Mia");
 
 	bob.attack("Joe");
-	bob.takeDamage(20);
-	bob.beRepaired(42);
+	joe.takeDamage(1);
+
+	joe.attack("Bob");
+	joe.takeDamage(0);
+	joe.guardGate();
+
+	mia.attack("Bob");
+	mia.takeDamage(5);
+	mia.highFivesGuys();
+
+	bob.beRepaired(10);
+	joe.beRepaired(42);
+	mia.beRepaired(123);
 
 	return (0);
 }

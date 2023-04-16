@@ -6,22 +6,20 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 12:33:26 by tpereira          #+#    #+#              #
-#    Updated: 2023/04/16 09:39:46 by tpereira         ###   ########.fr        #
+#    Updated: 2023/04/12 22:22:21 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROG		= clapTrap
-CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+PROG		= diamondTrap
+CC			= g++
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 SRCS		= ./srcs/*.cpp
 INC			= ./includes/*.hpp
 
-all	:	$(PROG)
-
-$(PROG) : $(SRCS) $(INC)
-	@$(CXX) $(CXXFLAGS) $(SRCS) -o $(PROG)
+all :
+	@$(CC) $(CFLAGS) $(SRCS) -o $(PROG)
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
-	@printf "\e[38;5;46m█▓▒░	   Compiled clapTrap        ░▒▓█ \e[0m\n"
+	@printf "\e[38;5;46m█▓▒░	   Compiled DiamondTrap      ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m ╚════════════════════════════════════╝\e[0m\n"
 
 clean :
