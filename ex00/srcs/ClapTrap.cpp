@@ -6,11 +6,11 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 09:44:49 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:03:37 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------

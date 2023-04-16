@@ -6,11 +6,11 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:27:09 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 19:27:15 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:32:49 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/DiamondTrap.hpp"
+#include "DiamondTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -19,7 +19,7 @@
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
 	_name = "NoNameBoy";
-	_hitPoints = FragTrap::_hitPoints;
+	_hitPoints = FragTrap()._hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
 	std::cout << "\e[0;33mDiamondTrap\e[0m Default constructor called for " << _name << std::endl;
@@ -66,7 +66,8 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & value )
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 {
-	o << i;
+	(void)i;
+	// o << i;
 	return o;
 }
 

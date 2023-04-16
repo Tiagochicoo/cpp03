@@ -6,11 +6,11 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:45 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 19:27:12 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:25:54 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/FragTrap.hpp"
+#include "FragTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -19,11 +19,18 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	this->_name = "NoNameBoy";
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m Default constructor called for " << _name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m constructor called for " << name << std::endl;
 }
 
@@ -69,7 +76,10 @@ std::ostream &			operator<<( std::ostream & o, FragTrap const & i )
 void	FragTrap::attack(const std::string& target)
 {
 	if (this->_energyPoints && this->_hitPoints && this->_attackDamage)
+	{
+		this->_energyPoints--;
 		std::cout << "\e[0;32mFragTrap \e[0m" << this->_name << "\e[0;33m attacks \e[0m" << target << ", causing \e[0;33m" << this->_attackDamage << "\e[0m points of damage!\n";
+	}
 	else if (!this->_attackDamage)
 		std::cout << "\e[0;32mFragTrap \e[0m" << this->_name << "\e[0;31m doesn't have\e[0m enough \e[0;31mattack damage\e[0m to hurt anyone!\n";
 	else

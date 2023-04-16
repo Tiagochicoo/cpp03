@@ -6,11 +6,11 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:23:17 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/12 13:56:56 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:03:37 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {

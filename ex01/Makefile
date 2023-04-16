@@ -6,7 +6,7 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 12:33:26 by tpereira          #+#    #+#              #
-#    Updated: 2023/04/16 09:51:16 by tpereira         ###   ########.fr        #
+#    Updated: 2023/04/16 10:04:36 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ PROG		= scavTrap
 CC			= g++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 SRCS		= ./srcs/*.cpp
-INC			= ./includes/*.hpp
+INC			= ./includes
 
 all : $(PROG)
 
 $(PROG) : $(SRCS) $(INC)
-	@$(CC) $(CFLAGS) $(SRCS) -o $(PROG)
+	@$(CC) $(CFLAGS) $(SRCS) -I$(INC) -o $(PROG)
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	   Compiled scavTrap        ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m ╚════════════════════════════════════╝\e[0m\n"

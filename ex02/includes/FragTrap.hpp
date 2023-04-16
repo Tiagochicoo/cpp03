@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:49 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 19:20:16 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:28:24 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 class FragTrap : public ClapTrap
 {
-	private:
-
 	public:
 
 		FragTrap();
