@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:49 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 15:39:15 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 17:33:13 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class FragTrap : virtual public ClapTrap
 		~FragTrap();
 
 		FragTrap &		operator=( FragTrap const & value );
-		
+
 		virtual void	attack(const std::string& target);
 		void			highFivesGuys(void);
 };

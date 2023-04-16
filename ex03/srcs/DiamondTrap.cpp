@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:27:09 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 15:31:38 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 17:38:40 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,33 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap() : ClapTrap("NoNameBoy_clap_name")
+DiamondTrap::DiamondTrap() : ClapTrap("NoNameBoy_clap_name"), FragTrap(), ScavTrap()
 {
 	_name = "NoNameBoy";
 	this->ClapTrap::_name = _name + "_clap_name";
-	std::cout << this->ClapTrap::_name << std::endl;
-	this->ScavTrap::_energyPoints = 999; // can I do this?
+	this->FragTrap::_hitPoints = 100;
+	this->ScavTrap::_energyPoints = 50;
+	this->FragTrap::_attackDamage = 30;
 	_hitPoints = this->FragTrap::_hitPoints;
 	_energyPoints = this->ScavTrap::_energyPoints;
 	_attackDamage = this->FragTrap::_attackDamage;
 	std::cout << "\e[0;33mDiamondTrap\e[0m Default constructor called for " << _name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
-	ClapTrap::_name = name;
-	// FragTrap::_attackDamage = 30;
-	// ScavTrap::_name = _name;
-	// ClapTrap::_name = _name + "_clap_name";
-	_attackDamage = FragTrap::_attackDamage;
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
+	_name = name;
+	this->ClapTrap::_name = _name + "_clap_name";
+	this->FragTrap::_hitPoints = 100;
+	this->ScavTrap::_energyPoints = 50;
+	this->FragTrap::_attackDamage = 30;
+	_hitPoints = this->FragTrap::_hitPoints;
+	_energyPoints = this->ScavTrap::_energyPoints;
+	_attackDamage = this->FragTrap::_attackDamage;
 	std::cout << "\e[0;33mDiamondTrap\e[0m constructor called for " << _name << std::endl;
-	std::cout << "_name: " << _name << std::endl;
-	std::cout << "_hitPoints (FragTrap): " << _hitPoints << std::endl;
-	std::cout << "_energyPoints (ScavTrap): " << _energyPoints << std::endl;
-	std::cout << "_attackDamage (FragTrap): " << _attackDamage << std::endl;
-	std::cout << "_attackDamage (**FragTrap): " << FragTrap::_attackDamage << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(value),  ScavTrap(value), FragTrap(value)
+DiamondTrap::DiamondTrap( const DiamondTrap & value ) : ClapTrap(value), FragTrap(value), ScavTrap(value)
 {
 	(void)value;
 	std::cout << "\e[0;33mDiamondTrap\e[0m copy constructor called for " << this->_name << std::endl;

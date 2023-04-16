@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:45 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 15:30:19 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 17:40:12 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ FragTrap::FragTrap() : ClapTrap()
 	_energyPoints = 100;
 	_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m Default constructor called for " << _name << std::endl;
-	std::cout << "_attackDamage (*****FragTrap): " << FragTrap::_attackDamage << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -33,10 +32,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_energyPoints = 100;
 	_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m constructor called for " << name << std::endl;
-	std::cout << "_name: " << _name << std::endl;
-	std::cout << "_hitPoints: " << _hitPoints << std::endl;
-	std::cout << "_energyPoints: " << _energyPoints << std::endl;
-	std::cout << "_attackDamage: " << _attackDamage << std::endl;
 }
 
 FragTrap::FragTrap( const FragTrap & src ) : ClapTrap(src)
