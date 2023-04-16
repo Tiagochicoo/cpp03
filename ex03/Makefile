@@ -6,7 +6,7 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 12:33:26 by tpereira          #+#    #+#              #
-#    Updated: 2023/04/16 15:05:57 by tpereira         ###   ########.fr        #
+#    Updated: 2023/04/16 17:48:08 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CXXFLAGS		= -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g -fsanitize=
 SRCS		= ./srcs/*.cpp
 INC			= ./includes
 
-all :
+all : $(PROG)
+
+$(PROG) : $(SRCS) $(INC)
 	@$(CXX) $(CXXFLAGS) $(SRCS) -I$(INC) -o $(PROG)
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	 Compiled DiamondTrap       ░▒▓█ \e[0m\n"
