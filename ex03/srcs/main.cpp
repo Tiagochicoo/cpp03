@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:23:17 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 10:03:37 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 13:28:17 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,36 @@
 
 int main(void)
 {
-	ClapTrap 	bob("Bob");
-	ScavTrap 	joe("Joe");
-	FragTrap 	mia("Mia");
-	DiamondTrap	Lee("Lee");
+	// ClapTrap 	bob("Bob");
+	// ScavTrap 	joe("Joe");
+	// FragTrap 	mia("Mia");
+	// DiamondTrap	lee("Lee");
+	DiamondTrap	diamond("Joe");
 
-	bob.attack("Joe");
-	joe.takeDamage(1);
+	diamond.whoAmI();
 
-	joe.attack("Bob");
-	bob.takeDamage(0);
-	joe.guardGate();
+	// bob.attack("Joe");
+	// joe.takeDamage(1);
 
-	mia.attack("Bob");
-	mia.takeDamage(5);
-	mia.highFivesGuys();
+	// joe.attack("Bob");
+	// bob.takeDamage(0);
+	// joe.guardGate();
 
-	Lee.attack("Joe");
-	Lee.takeDamage(30);
-	Lee.beRepaired(999);
-	Lee.guardGate();
-	Lee.highFivesGuys();
-	Lee.whoAmI();
+	// mia.attack("Bob");
+	// mia.takeDamage(5);
+	// mia.highFivesGuys();
 
-	bob.beRepaired(10);
-	joe.beRepaired(42);
-	mia.beRepaired(123);
+	// lee.attack("Joe");
+	// lee.takeDamage(30);
+	// lee.beRepaired(999);
+	// lee.guardGate();
+	// lee.highFivesGuys();
+	// lee.whoAmI();
 
+	// bob.beRepaired(10);
+	// joe.beRepaired(42);
+	// mia.beRepaired(123);
+	// mia.beRepaired(123);
+	
 	return (0);
 }

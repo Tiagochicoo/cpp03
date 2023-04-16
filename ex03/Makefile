@@ -6,20 +6,20 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 12:33:26 by tpereira          #+#    #+#              #
-#    Updated: 2023/04/16 10:05:15 by tpereira         ###   ########.fr        #
+#    Updated: 2023/04/16 12:09:46 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PROG		= diamondTrap
-CC			= g++
-CFLAGS		= -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g -fsanitize=address
+CXX			= g++
+CXXFLAGS		= -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g -fsanitize=address
 SRCS		= ./srcs/*.cpp
 INC			= ./includes
 
 all :	$(PROG)
 
 $(PROG) : $(SRCS) $(INC)
-	@$(CC) $(CFLAGS) $(SRCS) -I$(INC) -o $(PROG)
+	@$(CXX) $(CXXFLAGS) $(SRCS) -I$(INC) -o $(PROG)
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	 Compiled DiamondTrap       ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m ╚════════════════════════════════════╝\e[0m\n"

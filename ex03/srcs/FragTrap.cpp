@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:13:45 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 10:25:54 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 13:23:17 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_name = "NoNameBoy";
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	_name = "NoNameBoy";
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m Default constructor called for " << _name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	_name = name;
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "\e[0;32mFragTrap\e[0m constructor called for " << name << std::endl;
 }
 
