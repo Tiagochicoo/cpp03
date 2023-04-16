@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/14 19:27:52 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 09:44:49 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,23 @@ ClapTrap::ClapTrap()
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 
-	std::cout << "\e[0;36mClapTrap\e[0m Default constructor called for " << _name << std::endl;
+	std::cout << "ClapTrap constructor called for " << _name << std::endl;
 }
-
 
 ClapTrap::ClapTrap(std::string name)
 {
 	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 
-	std::cout << "\e[0;36mClapTrap\e[0m constructor called for " << name << std::endl;
+	std::cout << "ClapTrap constructor called for " << name << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap & src )
 {
 	(void)src;
-	std::cout << "\e[0;36mClapTrap\e[0m copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 
@@ -50,7 +49,7 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\e[0;36mClapTrap\e[0m destructor called " << (this->_name != "" ? "for " + this->_name : "from inherited Class") << std::endl;
+	std::cout << "ClapTrap destructor called for " << this->_name << std::endl;
 }
 
 /*
@@ -81,24 +80,39 @@ std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_energyPoints && this->_hitPoints && this->_attackDamage)
-		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << "\e[0;33m attacks \e[0m" << target << ", causing \e[0;33m" << this->_attackDamage << "\e[0m points of damage!\n";
+	{
+		this->_energyPoints--;
+		std::cout << "ClapTrap " << this->_name << "\e[0;33m attacks \e[0m" << target << ", causing \e[0;33m" << this->_attackDamage << "\e[0m points of damage!\n";
+	}
 	else if (!this->_attackDamage)
-		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << "\e[0;31m doesn't have\e[0m enough \e[0;31mattack damage\e[0m to hurt anyone!\n";
+		std::cout << "ClapTrap " << this->_name << "\e[0;31m doesn't have\e[0m enough \e[0;31mattack damage\e[0m to hurt anyone!\n";
 	else
-		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << "\e[0;35m has no hit points or energy points left!\e[0m\n";
+		std::cout << "ClapTrap " << this->_name << "\e[0;35m has no hit points or energy points left!\e[0m\n";
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount)
-		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " has taken \e[0;31m" << amount << "\e[0m points of \e[0;31mdamage\e[0m!\n";
+	if (!_hitPoints)
+		std::cout << "ClapTrap " << this->_name << " is dead and can't take any more damage!" << std::endl;
+	else if (this->_hitPoints >= amount)
+		std::cout << "ClapTrap " << this->_name << " has taken \e[0;31m" << amount << "\e[0m points of \e[0;31mdamage\e[0m!\n";
 	else
-		std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " took no \e[0;31mdamage\e[0m!\n";
+	{
+		this->_hitPoints = 0;
+		std::cout << "Clap Trap " << this->_name << " has no more hitPoints left and has died!" << std::endl;
+	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "\e[0;36mClapTrap \e[0m" << this->_name << " has been repaired for \e[0;32m" << amount << "\e[0m points of \e[0;32mdamage\e[0m!\n";
+	if (this->_energyPoints && this->_hitPoints)
+	{
+		this->_energyPoints--;
+		this->_hitPoints += amount;
+		std::cout << "ClapTrap " << this->_name << " has been repaired for \e[0;32m" << amount << "\e[0m points of \e[0;32mdamage\e[0m!\n";
+	}
+	else
+		std::cout << "ClapTrap " << this->_name << " has no energy or hit points left" << std::endl;
 }
 
 /*
