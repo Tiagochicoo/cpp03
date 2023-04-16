@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:23:17 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 13:28:17 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 15:28:11 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int main(void)
 	// ClapTrap 	bob("Bob");
 	// ScavTrap 	joe("Joe");
 	// FragTrap 	mia("Mia");
-	// DiamondTrap	lee("Lee");
-	DiamondTrap	diamond("Joe");
+	DiamondTrap	lee("Lee");
+	// DiamondTrap	diamond("Joe");
 
-	diamond.whoAmI();
+	// diamond.whoAmI();
 
 	// bob.attack("Joe");
 	// joe.takeDamage(1);
@@ -41,7 +41,7 @@ int main(void)
 	// lee.beRepaired(999);
 	// lee.guardGate();
 	// lee.highFivesGuys();
-	// lee.whoAmI();
+	lee.whoAmI();
 
 	// bob.beRepaired(10);
 	// joe.beRepaired(42);

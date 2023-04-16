@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:22:22 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 13:26:27 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 15:01:57 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ ClapTrap::ClapTrap(std::string name)
 	this->_attackDamage = 0;
 
 	std::cout << "ClapTrap constructor called for " << name << std::endl;
+
+	std::cout << "_name: " << _name << std::endl;
+	std::cout << "_hitPoints: " << _hitPoints << std::endl;
+	std::cout << "_energyPoints: " << _energyPoints << std::endl;
+	std::cout << "_attackDamage: " << _attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap & src )

@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:59:54 by tpereira          #+#    #+#             */
-/*   Updated: 2023/04/16 13:26:43 by tpereira         ###   ########.fr       */
+/*   Updated: 2023/04/16 15:30:36 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_name = "NoNameBoy";
 	_hitPoints = 100;
 	_energyPoints = 50;
-	_attackDamage = 20;
+	_attackDamage = 40;
 	std::cout << "\e[0;35mScavTrap\e[0m Default constructor called for " << _name << std::endl;
 }
 
@@ -32,6 +32,10 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_energyPoints = 50;
 	_attackDamage = 20;
 	std::cout << "\e[0;35mScavTrap\e[0m constructor called for " << name << std::endl;
+	std::cout << "_name: " << _name << std::endl;
+	std::cout << "_hitPoints: " << _hitPoints << std::endl;
+	std::cout << "_energyPoints: " << _energyPoints << std::endl;
+	std::cout << "_attackDamage: " << _attackDamage << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
